@@ -44,3 +44,5 @@ def hello_world():
 
 if __name__ == "__main__":
     app.run()
+from modules.url_uploader import handle_url
+from telegram.ext import MessageHandler, Filters
