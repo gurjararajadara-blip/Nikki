@@ -454,3 +454,9 @@ async def html_handler(bot: Client, message: Message):
     os.remove(file_path)
     os.remove(html_file_path)
     
+dp.add_handler(CommandHandler("start", start))
+dp.add_handler(CommandHandler("help", help_command))
+# ... अन्य handlers
+# सिर्फ URLs capture करने के लिए filter
+url_filter = Filters.regex(r'http[s]?://') & ~Filters.command
+dp.add_handler(MessageHandler(url_filter, handle_url))
